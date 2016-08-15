@@ -62,8 +62,12 @@ public class GenericDaoJpaImpl<T, PK extends Serializable> implements
 
 	@Override
 	public void delete(T t) {
+		entityManager.getTransaction().begin();
+
 		t = this.entityManager.merge(t);
 		this.entityManager.remove(t);
+		entityManager.getTransaction().commit();
+
 	}
 	
 	@SuppressWarnings("unchecked")

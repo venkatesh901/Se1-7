@@ -26,6 +26,9 @@
 						</a></li>
 
 
+					<li><a href="timesheets">
+							<i class="fa fa-book"></i> Time Sheets
+						</a></li>
 
 					<br>
 					<br>

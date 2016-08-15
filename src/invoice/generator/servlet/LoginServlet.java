@@ -1,5 +1,8 @@
 package invoice.generator.servlet;
 
+import invoice.generator.jpa.People_dataDaoImpl;
+import invoice.generator.pojo.People_data;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,34 +55,49 @@ public class LoginServlet extends HttpServlet {
 	            name = "Accountant";
 	        	
 	        }
-	        else if(username.toLowerCase().equals("pmanager") && password.toLowerCase().equals("pass1234")){
+	        else
+	        {
+	        	
+	        	int userid = Integer.parseInt(username); 
+	        	
+	        	People_dataDaoImpl people_dataDaoImpl = new People_dataDaoImpl();
+	        	People_data people = people_dataDaoImpl.read(userid);
+	        	
+	        	if(people==null){
+	        		usertype = -1;	
+	        	}
+	        	
+	       	else {
+	       		
+	        	if(people.getRole().equals("Project Manager") && password.toLowerCase().equals("pass1234")){
 	        	usertype = 2;
 	        	redirecttopage = "projects";
 	            name = "Manager";
 
-	        }
+	            }
 	        
-	        
-	        else if(username.toLowerCase().equals("developer") && password.toLowerCase().equals("dev1234")){
+		       else if(people.getRole().equals("Developer") && password.toLowerCase().equals("pass1234")){
 	        	usertype = 3;
-	        	redirecttopage = "developer";
+	        	redirecttopage = "timesheets";
 	            name = "Developer";
 
+	          
+		       }
+	          }
+	            HttpSession session = request.getSession();
+	            session.setAttribute("userid", userid);
+
 	        }
-	        
-	       
 	        if (usertype == -1) {
 	            
 	            request.setAttribute("error", "Invalid credentials");
 	            request.getRequestDispatcher("/index.jsp").forward(request, response);
 	            
 	        } else {
-	            HttpSession session = request.getSession();
+
+	        	HttpSession session = request.getSession();
 	            session.setAttribute("usertype", "" + usertype);
 	            session.setAttribute("name", name);
-	            
-	            System.out.println("Testing");
-	            
 	            response.sendRedirect(request.getContextPath() + "/"+redirecttopage);
 	        }
 	}

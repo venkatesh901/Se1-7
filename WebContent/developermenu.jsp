@@ -16,31 +16,9 @@
 			<div class="menu_section">
 				<ul class="nav side-menu">
 
-					<li><a href="accountant">
-							<i class="fa fa-pencil-square-o"></i> Import Files
-						</a></li>
 
-					<li><a href="company">
-							<i class="fa fa-pencil-square-o"></i> Company
-						</a></li>
-					<li><a href="clients">
-							<i class="fa fa-user"></i> Clients
-						</a></li>
-					<li><a href="projects">
-							<i class="fa fa-book"></i> Projects
-						</a></li>
-
-					<li><a href="people">
-							<i class="fa fa-users"></i> People
-						</a></li>
-
-
-					<li><a href="projectperson">
-							<i class="fa fa-users"></i> Project Persons
-						</a></li>
-						
-						<li><a href="invoice">
-							<i class="fa fa-money"></i> Generate Invoice
+					<li><a href="timesheets">
+							<i class="fa fa-book"></i> Time Sheets
 						</a></li>
 
 					<br>

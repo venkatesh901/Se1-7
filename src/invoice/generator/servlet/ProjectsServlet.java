@@ -38,7 +38,6 @@ public class ProjectsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		List<Project_data> projectsData = new Project_dateDaoImpl().findAll();
-
 		request.setAttribute("projectsData", projectsData);
 
 		request.getRequestDispatcher("/projects.jsp")
