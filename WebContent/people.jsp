@@ -27,7 +27,7 @@
 			tab3class = "active";
 		} else if (request.getAttribute("activetab").equals("4")) {
 			tab4class = "active";
-		}else if (request.getAttribute("activetab").equals("5")) {
+		} else if (request.getAttribute("activetab").equals("5")) {
 			tab5class = "active";
 		}
 	}
@@ -58,7 +58,19 @@
 
 		<div class="main_container">
 
+			<%
+				if (session.getAttribute("usertype") == null
+						|| session.getAttribute("usertype").equals("1")) {
+			%>
 			<jsp:include page="adminmenu.jsp" />
+			<%
+				} else {
+			%>
+			<jsp:include page="managermenu.jsp" />
+
+			<%
+				}
+			%>
 
 			<div class="right_col" role="main">
 
@@ -103,45 +115,59 @@
 
 													<div id="exTab2" class="container">
 														<ul class="nav nav-tabs">
-															<li class="<%out.print(tab1class);%>"><a href="#1" data-toggle="tab"><i class="fa fa-envelope"></i> Peoples
-																	List </a></li>
-															<li class="<%out.print(tab2class);%>"><a href="#2" data-toggle="tab"><i class="fa fa-plus"></i> Add People</a></li>
-															<li class="<%out.print(tab3class);%>"><a href="#3" data-toggle="tab"><i class="fa fa-pencil-square-o"></i> Edit People</a></li>
-															<li class="<%out.print(tab4class);%>"><a href="#4" data-toggle="tab"><i class="fa fa-trash"></i> Inactive
-																	People</a></li>
-																		<li class="<%out.print(tab5class);%>"><a href="#5"
+															<li class="<%out.print(tab1class);%>"><a href="#1"
+																	data-toggle="tab">
+																	<i class="fa fa-envelope"></i> Peoples List
+																</a></li>
+															<li class="<%out.print(tab2class);%>"><a href="#2"
+																	data-toggle="tab">
+																	<i class="fa fa-plus"></i> Add People
+																</a></li>
+															<li class="<%out.print(tab3class);%>"><a href="#3"
+																	data-toggle="tab">
+																	<i class="fa fa-pencil-square-o"></i> Edit People
+																</a></li>
+															<li class="<%out.print(tab4class);%>"><a href="#4"
+																	data-toggle="tab">
+																	<i class="fa fa-trash"></i> Inactive People
+																</a></li>
+															<li class="<%out.print(tab5class);%>"><a href="#5"
 																	data-toggle="tab">
 																	<i class="fa fa-check"></i> Activate Person
 																</a></li>
-																	
+
 
 														</ul>
 
 														<div class="tab-content mr50">
-															<div class="tab-pane <% out.print(tab1class); %>" id="1" align="center">
+															<div class="tab-pane <%out.print(tab1class);%>" id="1"
+																align="center">
 
 																<jsp:include page="listpeople.jsp" />
 
 															</div>
 
-															<div class="tab-pane <% out.print(tab2class); %>" id="2" align="center">
+															<div class="tab-pane <%out.print(tab2class);%>" id="2"
+																align="center">
 																<jsp:include page="addPeople.jsp" />
 
 
 															</div>
 
-															<div class="tab-pane <% out.print(tab3class); %>" id="3" align="center">
+															<div class="tab-pane <%out.print(tab3class);%>" id="3"
+																align="center">
 
 																<jsp:include page="editPeople.jsp" />
 
 															</div>
 
-															<div class="tab-pane <% out.print(tab4class); %>" id="4" align="center">
+															<div class="tab-pane <%out.print(tab4class);%>" id="4"
+																align="center">
 																<jsp:include page="inactivePeople.jsp" />
 
 
 															</div>
-																
+
 															<div class="tab-pane <%out.print(tab5class);%>" id="5"
 																align="center">
 																<jsp:include page="activeperson.jsp" />

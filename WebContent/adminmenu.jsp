@@ -38,11 +38,25 @@
 					<li><a href="projectperson">
 							<i class="fa fa-users"></i> Project Persons
 						</a></li>
-						
-						<li><a href="invoice">
+
+					<li><a href="invoice">
 							<i class="fa fa-money"></i> Generate Invoice
 						</a></li>
 
+
+					<li><a href="payrollreport">
+							<i class="fa fa-money"></i> Payroll Report
+						</a></li>
+
+
+					<li><a href="projectreport">
+							<i class="fa fa-book"></i> Project Report
+						</a></li>
+
+
+					<li><a href="test">
+							<i class="fa fa-book"></i> Test
+						</a></li>
 					<br>
 					<br>
 

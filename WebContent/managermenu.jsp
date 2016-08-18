@@ -20,6 +20,11 @@
 							<i class="fa fa-book"></i> Projects
 						</a></li>
 
+					<li><a href="people">
+							<i class="fa fa-users"></i> People
+						</a></li>
+
+
 
 					<li><a href="managerprojectperson">
 							<i class="fa fa-book"></i> Project Person

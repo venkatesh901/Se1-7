@@ -75,11 +75,13 @@
 
 									<div class="row">
 
+
 										<div class="row setup-content">
 
 
 
 											<div class="col-xs-8 col-md-offset-2">
+												<h2 style="margin-left: 220px;margin-bottom: 30px;">Invoice Generation</h2>
 
 												<%
 													ArrayList<Project_data> projectdata = (ArrayList<Project_data>) request.getAttribute("projectdata");
@@ -100,7 +102,7 @@
 																<%
 																	if(projectdata !=null) {
 
-																																											for (Project_data project: projectdata) {
+																																																									for (Project_data project: projectdata) {
 																%>
 																<option
 																	value="<%out.print(project.getProject_number());%>"
@@ -115,7 +117,8 @@
 															</select>
 														</div>
 														<button class="btn btn-success btn-add col-md-3"
-															type="submit" style="height: 35px;">Submit</button>
+															type="submit" style="height: 35px;">Generate
+															Invoice</button>
 
 													</div>
 												</form>

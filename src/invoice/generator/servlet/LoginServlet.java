@@ -62,6 +62,7 @@ public class LoginServlet extends HttpServlet {
 	        	
 	        	People_dataDaoImpl people_dataDaoImpl = new People_dataDaoImpl();
 	        	People_data people = people_dataDaoImpl.read(userid);
+	        	name = people.getName();
 	        	
 	        	if(people==null){
 	        		usertype = -1;	
@@ -72,14 +73,14 @@ public class LoginServlet extends HttpServlet {
 	        	if(people.getRole().equals("Project Manager") && password.toLowerCase().equals("pass1234")){
 	        	usertype = 2;
 	        	redirecttopage = "projects";
-	            name = "Manager";
+	           // name = "Manager";
 
 	            }
 	        
 		       else if(people.getRole().equals("Developer") && password.toLowerCase().equals("pass1234")){
 	        	usertype = 3;
 	        	redirecttopage = "timesheets";
-	            name = "Developer";
+	            //name = "Developer";
 
 	          
 		       }

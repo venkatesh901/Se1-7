@@ -134,7 +134,7 @@ public class ProjectsServlet extends HttpServlet {
 			project_data.setProject_name(projectname);
 			project_data.setState_date(startdate);
 			project_data.setEnd_date(enddate);
-			project_data.setStatus("Open");
+			project_data.setStatus(status);
 			project_data.setProject_manager(projectmanager);
 			project_data.setClient_contact(clientcontact);
 			project_data.setBudget(Integer.parseInt(budget));
